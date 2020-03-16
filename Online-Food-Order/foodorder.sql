@@ -1,23 +1,6 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
 -- Database: `foodorder`
---
-
--- --------------------------------------------------------
-
---
+-- ----------------------------------------------------
 -- Table structure for table `contact`
---
 
 CREATE TABLE `contact` (
   `Name` varchar(250) NOT NULL,
@@ -27,7 +10,6 @@ CREATE TABLE `contact` (
   `Message` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
 -- Dumping data for table `contact`
 --
 
@@ -79,10 +61,7 @@ CREATE TABLE `food` (
   `options` varchar(10) NOT NULL DEFAULT 'ENABLE'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
 -- Dumping data for table `food`
---
-
 INSERT INTO `food` (`F_ID`, `name`, `price`, `description`, `R_ID`, `images_path`, `options`) VALUES
 (58, 'angelicious-popcorn', 40, 'Juicy Masala Paneer Kathi Roll loaded with Masala Paneer chunks, onion & Mayo.', 1, 'images/angelicious-popcorn.jpg', 'ENABLE'),
 (59, 'Meurig Fish', 60, 'Try Meurig - A whole Pomfret fish grilled with tangy marination & served with grilled onions and tomatoes.', 2, 'images/Meurig.jpg', 'ENABLE');
@@ -256,7 +235,3 @@ ALTER TABLE `orders`
 ALTER TABLE `restaurants`
   ADD CONSTRAINT `restaurants_ibfk_1` FOREIGN KEY (`M_ID`) REFERENCES `manager` (`username`);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
